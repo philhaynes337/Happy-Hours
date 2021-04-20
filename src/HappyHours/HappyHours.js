@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import Hnav from './files/Hnav';
 
 
 class HappyHours extends Component {
@@ -8,7 +8,12 @@ class HappyHours extends Component {
 
         return(
             <div>
-                Happy Hours Component
+                <nav>
+                    <Hnav />
+                </nav>
+                <section>
+                    <h2>Welcome User!</h2>
+                </section>
             </div>
         )
     }
