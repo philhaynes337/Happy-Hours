@@ -1,0 +1,9 @@
+header {
+    font-family: 'Vast Shadow', cursive;
+    font-size: 80px;
+    border-color: #000000;
+    border-style: solid;
+    text-align: center;
+    margin: 10px;
+    padding: 5px;
+}
