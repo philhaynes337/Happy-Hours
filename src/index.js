@@ -5,17 +5,22 @@ import App from './App/App';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
 import { BrowserRouter } from 'react-router-dom';
+//import { UserContext } from './UserContext'
 
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
+
+    
       
-      <Header />
+        <Header />
 
-          <App />
+            <App />
 
-            <Footer />
+              <Footer />
+
+    
 
     </BrowserRouter>
   </React.StrictMode>,
