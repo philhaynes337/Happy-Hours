@@ -1,23 +1,19 @@
-import React, { Component } from 'react';
-import { UserContext } from '../../UserContext'
-import Config from '../../config';
-
-
+//import React from 'react';
 
 const TokenService = {
-    
-    saveToken(token) {
-        
-    //console.log(this.context)
-     window.sessionStorage.setItem('TOKEN_KEY', token)
 
+    // saveToken(token) {
+        
+    //  window.sessionStorage.setItem('TOKEN_KEY', token)
+
+    // },
+    // clearAuthToken() {
+    //     window.sessionStorage.removeItem('TOKEN_KEY')
+    // },
+    hasAuthToken(token) {
+        return !!token
     },
-    clearAuthToken() {
-        window.sessionStorage.removeItem('TOKEN_KEY')
-    }
 }
 
 
-
-TokenService.contextType = UserContext
 export default TokenService

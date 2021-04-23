@@ -9,6 +9,7 @@ export class UserContextProvider extends Component {
         userName: null,
         token: null,
         userid: null,
+        show: 'noShow',
     }
     setUserName = userName => {
         this.setState({userName: userName});
@@ -21,18 +22,23 @@ export class UserContextProvider extends Component {
     setUserId = userid => {
         this.setState({userid: userid})
     }
+    setEditButton = show => {
+        this.setState({show: show})
+    }
 
     render() {
-        const {userName, token, userid} = this.state;
-        const {setUserName, setUserToken, setUserId} = this;
+        const {userName, token, userid, show} = this.state;
+        const {setUserName, setUserToken, setUserId, setEditButton} = this;
         return(
             <UserContext.Provider value={{
                 userName,
                 token,
                 userid,
+                show,
                 setUserName,
                 setUserToken,
                 setUserId,
+                setEditButton,
             }}>
                 {this.props.children}
             </UserContext.Provider>

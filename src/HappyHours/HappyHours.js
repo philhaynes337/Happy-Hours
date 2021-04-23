@@ -2,14 +2,20 @@ import React, { Component } from 'react';
 import Hnav from './files/Hnav';
 import { UserContext } from '../UserContext';
 import Config from '../config';
+import UserData from './files/UserData';
+
 
 
 class HappyHours extends Component {
-    //static contextType = UserContext;
-
-    state = {
-        error: 'No Error',
+    constructor(props) {
+        super(props)
+        this.state = {
+            error: null,
+            user: [],
+        }
     }
+
+
 
     componentDidMount() {
 
@@ -23,25 +29,19 @@ class HappyHours extends Component {
                 'Authorization': `Bearer ${Config.API_KEY}`,
             }
         }
-        console.log(startUrl)
+        
         
         fetch(startUrl, startOptions)
             .then(res => res.json())
             .then(data => {
                 //set State at this point
-                let abc = data.error
-                console.log(data.error)
-                if(abc === undefined) {
-                    console.log('data is undefined')
-                    this.setState({
-                        error: 'No Error'
-                    })
-                }else {
+       
                 this.setState({
                    
-                    error: data.error
+                    error: data.error,
+                    user: data
                 })
-            }
+            
             })
             .catch(err => {
                 console.log(err)
@@ -52,9 +52,9 @@ class HappyHours extends Component {
 
     render() {
         
-        const {userName, token, userid} = this.context;
-        const { error } = this.state;
-
+        const {userName} = this.context;
+        const { user } = this.state;
+        //console.log(user)
 
         return(
             <div>
@@ -65,9 +65,9 @@ class HappyHours extends Component {
                 </nav>
                 <section>
                     <h2>Welcome  {userName}!</h2>
-                    <p>Token: {token}</p>
-                    <p>UserId: {userid}</p>
-                    <p>Error Status: {error}</p>
+                </section>
+                <section>
+                    <UserData data={user} />
                 </section>
                 
                 

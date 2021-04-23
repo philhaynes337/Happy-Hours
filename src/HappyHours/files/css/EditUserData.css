@@ -1,0 +1,16 @@
+.EditUser {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    top: 20%;
+    left: 30%;
+    margin-left: -50px; /* margin is -0.5 * dimension */
+    margin-top: -25px;
+    border-style: solid;
+    border-color: #000000;
+    background-color: #000000;
+    color: #FFFFFF;
+}
+.noShow {
+    display: none;
+}

@@ -1,0 +1,20 @@
+.ud-row {
+    display: flex;
+    flex-direction: row;
+    border-color: #000000;
+    border-style: solid;
+    
+}
+.ud-row-w {
+    width: 75px;
+    border-color: #000000;
+    border-style: solid;
+}
+.ud_row-w1 {
+    width: 200px;
+    border-color: #000000;
+    border-style: solid;
+}
+.noShow {
+    display: none;
+}

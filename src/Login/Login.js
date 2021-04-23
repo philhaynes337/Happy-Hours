@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import AuthService from './Auth/AuthService';
-import TokenService from './Auth/TokenService';
+//import TokenService from './Auth/TokenService';
 import { UserContext } from '../UserContext';
 
 
@@ -44,10 +44,10 @@ class Login extends Component {
         .then(res => {
             
             user_password.value = '';
-            TokenService.saveToken(res.authToken);
+            //TokenService.saveToken(res.authToken);
            //console.log(res.userid)
             this.setState({
-                token: window.sessionStorage.getItem('TOKEN_KEY'),
+                token: res.authToken,
                 userName: user_name.value,
                 userid: res.userid,
 
@@ -59,10 +59,10 @@ class Login extends Component {
             setUserName(this.state.userName)
             
             setUserToken(this.state.token)
-            console.log(this.state.userid)
+            //console.log(this.state.userid)
             
             setUserId(this.state.userid)
-            TokenService.clearAuthToken();
+            //TokenService.clearAuthToken();
             
             this.loginSuccess();
         })
