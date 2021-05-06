@@ -1,16 +1,87 @@
-.EditUser {
+
+.noShow {
+    display: none;
+}
+
+.show1 {
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    left: 0;
+    top: 0;
+
+
+    z-index: 1;
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
+}
+.show {
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    color: #FFFFFF;
+    overflow: auto; /* Enable scroll if needed */
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.8s;
+    animation-name: animatetop;
+    animation-duration: 1.0s;
+}
+.modal {
+    display: block;
     position: absolute;
-    width: 300px;
-    height: 300px;
-    top: 20%;
+    width: 350px;
+    height: 1070px;
+    top: 10%;
     left: 30%;
     margin-left: -50px; /* margin is -0.5 * dimension */
     margin-top: -25px;
     border-style: solid;
     border-color: #000000;
-    background-color: #000000;
-    color: #FFFFFF;
+    background-color: rgb(0,0,0); /* Fallback color */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.15);
+
 }
-.noShow {
-    display: none;
+
+input {
+    width: 100px;
+    height: 25px;
 }
+button {
+    width: 150px;
+    height: 50px;
+    font-size: 25px;
+    
+}
+
+.colum {
+    display: flex;
+    flex-direction: column;
+    border-style: solid;
+    border-color: black;
+    width: 60px;
+
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    border-style: solid;
+    border-color: black;
+    width: 100%;
+}
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+  
+@keyframes animatetop {
+from {top:-300px; opacity:0}
+to {top:0; opacity:1}
+}
+  

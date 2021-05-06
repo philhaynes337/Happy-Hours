@@ -11,6 +11,9 @@ import Nav from '../Nav/Nav';
 import PrivateRoute from '../Utils/PrivateRoute';
 import NotFound from '../NotFound/NotFound';
 import EditUserData from '../HappyHours/files/EditUserData';
+import AddNewWeek from '../HappyHours/files/AddNewWeek';
+import AccountSettings from '../HappyHours/files/AccountSettings';
+import TakeHappyHours from '../HappyHours/files/TakeHappyHours';
 
 
 class App extends Component {
@@ -35,10 +38,13 @@ class App extends Component {
             <Switch>
               <Route exact path='/' component={Home} />
               <Route path='/About' component={About} />
-              <PrivateRoute path='/HappyHours' component={HappyHours} />
-              <PrivateRoute path='/HHEdit' component={EditUserData} />
               <Route path='/CreateAccount' component={CreateAccount} />
               <Route path='/Login' component={Login} />
+              <PrivateRoute path='/HappyHours' component={HappyHours} />
+              <PrivateRoute path='/HHEdit' component={EditUserData} />
+              <PrivateRoute path='/ANW' component={AddNewWeek} />
+              <PrivateRoute path='/AccountSettings' component={AccountSettings} />
+              <PrivateRoute path='/TakeHappyHours' component={TakeHappyHours} />
 
               <Route component={NotFound} />
             </Switch>

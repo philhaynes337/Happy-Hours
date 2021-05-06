@@ -2,16 +2,23 @@
 
 const TokenService = {
 
-    // saveToken(token) {
+saveToken(token) {
+    window.sessionStorage.setItem('TOKEN_KEY', token)
+    },
+    getAuthToken() {
         
-    //  window.sessionStorage.setItem('TOKEN_KEY', token)
-
-    // },
-    // clearAuthToken() {
-    //     window.sessionStorage.removeItem('TOKEN_KEY')
-    // },
-    hasAuthToken(token) {
-        return !!token
+    return window.sessionStorage.getItem('TOKEN_KEY')
+    },
+    clearAuthToken() {
+    
+    window.sessionStorage.removeItem('TOKEN_KEY')
+    },
+    windowAuthToken() {
+        return !!TokenService.getAuthToken()
+    },
+    hasAuthToken() {
+        //console.log('Token Service: ' + token)
+        return !!TokenService.getAuthToken()
     },
 }
 

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './css/UserData.css'
 import EditUserData from './EditUserData';
 import UserContext from '../../UserContext';
+import DeleteUserEntry from './DeleteUserEntry';
 
 
 class UserData extends Component {
@@ -10,26 +11,19 @@ class UserData extends Component {
         this.state = {
             data: props.user,
             error: null,
-            show: 'noShow'
+            show: 'noShow',
+            token: props.token
         }
     }
 
 
 
 
-    handleEditButton = (e) => {
-        e.preventDefault();
-       
-        const {setEditButton} = this.context;
-
-        setEditButton('EditUser');
-     }
-
 
 
     render() {
 
-        const { data } = this.props
+        const { data, token } = this.props
  
         
 
@@ -42,7 +36,18 @@ class UserData extends Component {
 
             const totalBonus = datau.day1b + datau.day2b + datau.day3b + datau.day4b + datau.day5b + datau.day6b + datau.day7b
 
-            const happyHoursWeek = totalHours - 40
+            let happyHoursWeek
+
+            if (totalHours <= 40) {
+
+                happyHoursWeek = 0
+            }else {
+                happyHoursWeek = totalHours - 40
+            }
+
+
+
+          
 
             return(
 
@@ -109,12 +114,11 @@ class UserData extends Component {
                     </div>
                 </div>
                 <div className='ud-row'>
-                        {datau.id}
-                            <button onClick={this.handleEditButton} name='Edit Button'>
-                                Edit
-                            </button>
+                        
 
-                                <EditUserData id={datau.id} />
+
+                                <EditUserData data={datau} token={token} />
+                                <DeleteUserEntry data={datau} />
                                 
                             
                         </div>
@@ -126,7 +130,7 @@ class UserData extends Component {
 
         return(
             <div>
-                User Data Component<br />
+               <br />
                 {showData}
             </div>
         )
