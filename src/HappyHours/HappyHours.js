@@ -19,6 +19,8 @@ class HappyHours extends Component {
 
 
 
+
+
     componentDidMount() {
         
         const loggedInUrl = `${Config.API_ENDPOINT}/success/step`
@@ -52,9 +54,45 @@ class HappyHours extends Component {
 
 
         const { userid } = this.context
+                //INSERT HERE
+
+
+                const idata = {id: userid}
+
+
+                const stepThreeUrl = `${Config.API_ENDPOINT}/success/stepthree`
+        
+                const stepThreeOptions = {
+                    method: 'POST',
+                    body: JSON.stringify(idata),
+                    headers: {
+                        'content-type': 'application/json',
+                        'Authorization': `Bearer ${Config.API_KEY}`,
+                    }
+                }
+                
+    
+                fetch(stepThreeUrl, stepThreeOptions)
+                .then(res => res.json())
+                .then(data => {
+    
+                    //console.log('Data.HappyHours: ' + data[0].happyhours)
+                    this.setState({
+                        happyhours: data[0].happyhours,
+                        happyhours_used: data[0].happyhours_used,
+                        life_time_happyhours: data[0].life_time_happyhours,
+                        userName: data[0].user_name
+                    })
+                    //console.log(this.state)
+    
+    
+                })
 
 
 
+
+
+                //Do NOT EDIT BELOW
         const startUrl = `${Config.API_ENDPOINT}/success/${userid}`
 
         const startOptions = {
@@ -69,7 +107,7 @@ class HappyHours extends Component {
         fetch(startUrl, startOptions)
             .then(res => res.json())
             .then(data => {
-
+                
                 const happyHours = data.map(datam => {
                     // console.log(data.totalhours)
          
@@ -144,12 +182,16 @@ class HappyHours extends Component {
 
     render() {
         
-        const {userName} = this.context;
+        //const {userName} = this.context;
         const { user } = this.state;
 
         const token = this.context.token
 
-        const { sumOfHappyHours } = this.state
+        const { sumOfHappyHours, happyhours_used, userName } = this.state
+
+        let balance = sumOfHappyHours - happyhours_used
+
+        //console.log('this is user state: ' + this.state.user[0])
 
         return(
             <div>
@@ -165,10 +207,10 @@ class HappyHours extends Component {
                     Life Time Happy Hours: {sumOfHappyHours}
                 </section>
                 <section>
-                    Current Balance: 
+                    Current Balance: {balance}
                 </section>
                 <section>
-                    Total Used: 
+                    Total Used: {happyhours_used}
                 </section>
                 <section>
                     <UserData data={user} token={token} />

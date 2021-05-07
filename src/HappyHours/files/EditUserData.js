@@ -133,7 +133,7 @@ class EditUserData extends Component {
                     Week Start: (Format YYYY-MM-DD)
                 </div>
                 <div className='colum'>
-                    <input type='text' name='date' id='date' defaultValue={weekStart} />
+                    <input type='date' name='date' id='date' defaultValue={weekStart} />
                 </div>
 
                 <div className='row'>

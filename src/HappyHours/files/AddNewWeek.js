@@ -127,7 +127,7 @@ class AddNewWeek extends Component {
                     Week Start: (Format: YYYY-MM-DD)
                 </div>
                 <div className=''>
-                    <input type='text' name='date' id='date' defaultValue='YYYY-MM-DD' />
+                    <input type='date' name='date' id='date' defaultValue='YYYY-MM-DD' />
                 </div>
 
                 <div className=''>
