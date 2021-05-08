@@ -1,10 +1,12 @@
 header {
-    font-family: 'Vast Shadow', cursive;
+    font-family: 'Lexend Deca', sans-serif;
     font-size: 80px;
     border-color: #000000;
     border-style: solid;
     text-align: center;
     margin: 10px;
     padding: 5px;
+    background: #28208C;
+    color: #FFFFFF;
 }
 

@@ -9,10 +9,10 @@ class Header extends Component {
             <>
             
                 <header>
-                    <style>
-                        @import url('https://fonts.googleapis.com/css2?family=Vast+Shadow&display=swap');
-                    </style>
-                    (: Happy Hours :)
+                <style>
+                    @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+                </style>
+                    Happy Hours😃
                 </header>
            
             </>

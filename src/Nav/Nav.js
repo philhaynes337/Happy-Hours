@@ -7,7 +7,7 @@ class Nav extends Component {
     render() {
 
         return(
-            <div>
+            <div className='nav'>
                 <div className='col'>
                     <Link to='/'>Home</Link>
                 </div>

@@ -8,3 +8,11 @@
     margin: 0px 10px 0px 0px;
     padding: 0px;
 }
+.col a:hover {
+    background: #000000;
+}
+
+.nav a {
+    background: #28208C;
+    color: #FFFFFF;
+}

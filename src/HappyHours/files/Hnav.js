@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import LogOut from './LogOut';
 import './css/Hnav.css'
 
-
+//                <Link to={'/AccountSettings'}>Account Settings</Link>| 
 class Hnav extends Component {
 
     render() {
@@ -13,7 +13,7 @@ class Hnav extends Component {
                <Link to={'/HappyHours'}>View Entries</Link>|  
                <Link to={'/ANW'}>Add New Week</Link>|  
                <Link to={'/TakeHappyHours'}>Use Happy Hours</Link>| 
-               <Link to={'/AccountSettings'}>Account Settings</Link>| 
+
                <LogOut />
             </div>
         )
