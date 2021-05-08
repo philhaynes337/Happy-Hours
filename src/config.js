@@ -1,8 +1,7 @@
-module.exports = {
-    PORT: process.env.PORT || 8000,
-    NODE_ENV: process.env.NODE_ENV, //|| 'development',
-    API_TOKEN: process.env.API_TOKEN, //|| 'testtoken',
-    DATABASE_URL: process.env.DATABASE_URL || 'postgresql://postgres@localhost/happyhoursdb',
-    TEST_DATABASE_URL: process.env.TEST_DATABASE_URL || 'postgresql://postgres@localhost/happyhoursdb',
-    JWT_SECRET: process.env.JWT_SECRET,// || 'test',
+const Config = {
+    API_ENDPOINT: process.env.REACT_APP_API_ENDPOINT || 'http://localhost:8000',
+    API_KEY: process.env.REACT_APP_API_TOKEN || 'testtoken',
+    TOKEN_KEY: process.env.REACT_APP_TOKEN_KEY || 'token',
 }
+
+export default Config
