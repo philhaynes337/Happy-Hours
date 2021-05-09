@@ -56,11 +56,18 @@ class AddNewWeek extends Component {
         }
 
         fetch(apiUrl, headerOptions)
-            .then()
-            .then()
+            .then(res => {
+                if (!res.ok) {
+                    return res.json().then(error => {
+                        throw error
+                    })
+                }
+            })
+            //.then()
             .catch(error => {
                 console.log(error)
             })
+            this.props.history.push('/HappyHours')
 
     }
 
@@ -99,6 +106,8 @@ class AddNewWeek extends Component {
             .catch(error => {
                 console.log(error)
             })
+
+  
 
 
     }

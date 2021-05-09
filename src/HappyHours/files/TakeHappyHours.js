@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Hnav from './Hnav';
 import Config from '../../config';
-import { UserContext } from '../../UserContext'
+import { UserContext } from '../../UserContext';
+import './css/TakeHappyHours.css';
 
 class TakeHappyHours extends Component {
     constructor(props) {
@@ -52,7 +53,7 @@ class TakeHappyHours extends Component {
                 console.log(error)
             })
 
-            window.location.reload(true)
+            this.props.history.push('/HappyHours')
         
     }
 
@@ -84,6 +85,9 @@ class TakeHappyHours extends Component {
             
             this.setState({
                 usid: usid.usid[0].usid,
+                happyhours: 0,
+                happyhours_used: 0,
+                life_time_happyhours: 0,
             })
 
             const {setUserId} = this.context
@@ -116,21 +120,43 @@ class TakeHappyHours extends Component {
                     happyhours_used: data[0].happyhours_used,
                     life_time_happyhours: data[0].life_time_happyhours,
                 })
-                console.log(this.state)
-
+               
+                let balance = parseInt(this.state.life_time_happyhours) - parseInt(this.state.happyhours_used) 
+                console.log()
+                if (balance < 1) {
+                    this.setState({
+                        zeroBalance: 'No Happy Hours!',
+                    })
+                }else {
+                    this.setState({
+                        zeroBalance: 'Take Time Off!'
+                    })
+                }
+        
 
             })
             
         })
 
 
+
     }
+
+
+
+    
 
     render() {
 
-        const { happyhours, happyhours_used, life_time_happyhours } = this.state;
+        const { happyhours, happyhours_used, life_time_happyhours, zeroBalance } = this.state;
 
         let balance = life_time_happyhours - happyhours_used
+
+        let parseBalance = parseInt(balance)
+
+        
+
+
 
         return(
             <div>
@@ -141,7 +167,7 @@ class TakeHappyHours extends Component {
 
                 <section>
                     <p>
-                        Current Balance is: {balance}
+                        Current Balance is: {parseBalance}
                     </p>
                     <p>
                         Happy Hours Used: {happyhours_used}
@@ -155,10 +181,10 @@ class TakeHappyHours extends Component {
                                 Hours to take:
                             </div>
                             <div>
-                                <input type='number' min='1' max='24' name='takehours' id='takehours' required />
+                                <input type='number' min='1' max={parseBalance} name='takehours' id='takehours' required />
                             </div>
                             <div>
-                                <button type='submit'>Take Time Off!</button>
+                                <button type='submit' className='tto-submit'>{zeroBalance}</button>
                             </div>
                         </form>
                     </div>

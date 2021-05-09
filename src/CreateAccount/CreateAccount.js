@@ -65,6 +65,8 @@ class CreateAccount extends Component {
         })
     
         }
+
+        this.props.history.push('/Login')
     }
 
 
