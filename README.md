@@ -1,5 +1,6 @@
 # Happy Hours Client
 =================
+
 [Click here](https://happyhours-two.vercel.app/ "Happy Hours") to visit the live app!
 -----------------
 API Documentation
