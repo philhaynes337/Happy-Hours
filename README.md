@@ -7,12 +7,16 @@ API Documentation
 [Click Here](https://github.com/philhaynes337/Happy-Hours-API "Happy Hours API") to see the API documentation.
 -----------------
 Demo User Info
-Username:
-Password:
+-
+Username: demo
+-
+Password: demo
 -----------------
 Screenshots
 
 ![Main Page](https://raw.githubusercontent.com/philhaynes337/Happy-Hours/main/pics/mobilesnip1.JPG)
+![Add New Week](https://raw.githubusercontent.com/philhaynes337/Happy-Hours/main/pics/snip3.JPG)
+![Take Time Off](https://raw.githubusercontent.com/philhaynes337/Happy-Hours/main/pics/snip4.JPG)
 
 -----------------
 Summary
