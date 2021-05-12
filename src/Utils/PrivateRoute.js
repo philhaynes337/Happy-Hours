@@ -1,7 +1,6 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import TokenService from '../Login/Auth/TokenService';
-//import {UserContext} from '../UserContext';
 
 function PrivateRoute({ component, ...props }) {
     const Component = component;

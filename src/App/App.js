@@ -30,9 +30,9 @@ class App extends Component {
     return(
       <div className='row'>
         <UserContextProvider>
-          <div>
+          
             <Nav />
-          </div>
+          
 
           <div className='routes'>
             <Switch>

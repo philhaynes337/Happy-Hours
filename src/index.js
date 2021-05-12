@@ -5,7 +5,6 @@ import App from './App/App';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
 import { BrowserRouter } from 'react-router-dom';
-//import { UserContext } from './UserContext'
 
 
 ReactDOM.render(

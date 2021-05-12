@@ -19,8 +19,16 @@ class AddNewWeek extends Component {
 
     handleSubmitNewWeek = e => {
         e.preventDefault();
-        //console.log('Submit New Entry Pressed')
+
+
         const {date, day1, day2, day3, day4, day5, day6, day7, day1b, day2b, day3b, day4b, day5b, day6b, day7b} = e.target
+
+        
+        if (!date.value) {
+            this.setState({
+                noDate: '*******Please Add Date*******'
+            })
+        }else {
 
         const totalHours = parseInt(day1.value) + parseInt(day2.value) + parseInt(day3.value) + parseInt(day4.value) + parseInt(day5.value) + parseInt(day6.value) + parseInt(day7.value);
 
@@ -63,11 +71,11 @@ class AddNewWeek extends Component {
                     })
                 }
             })
-            //.then()
             .catch(error => {
                 console.log(error)
             })
             this.props.history.push('/HappyHours')
+        }
 
     }
 
@@ -117,10 +125,7 @@ class AddNewWeek extends Component {
 
     render() {
 
-        //const {userid} = this.context
-        const {usid} = this.state
-        //console.log(this.context)
-        //console.log('This is the State os USID: ' + usid)
+        const { noDate } = this.state
 
         return(
             <div>
@@ -129,10 +134,12 @@ class AddNewWeek extends Component {
                     <p>
                     You may leave the days and bonus blank and edit later. <b>Must have the week start!</b>
                     </p>
-                    <p>user id: {usid}</p>
+                    
                 </section>
                 <form name='Add Entry' onSubmit={this.handleSubmitNewWeek}>
                 <div className=''>
+                    {noDate}
+                    <br />
                     Week Start: (Format: YYYY-MM-DD)
                 </div>
                 <div className=''>

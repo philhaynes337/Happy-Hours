@@ -109,7 +109,7 @@ class HappyHours extends Component {
             .then(data => {
                 
                 const happyHours = data.map(datam => {
-                    // console.log(data.totalhours)
+                    
          
                      const totalHappyHours = parseInt(datam.totalhours)
          
@@ -120,7 +120,7 @@ class HappyHours extends Component {
                          totalIntHappyHours = totalHappyHours - 40
                      }
          
-                     //console.log(totalIntHappyHours)
+                     
                      return totalIntHappyHours
                  })
          
@@ -142,7 +142,7 @@ class HappyHours extends Component {
                     id: this.state.usid,
                     life_time_happyhours: this.state.sumOfHappyHours,
                 }
-                //console.log(stepTwoData)
+                
 
                 const stepTwoOptions = {
                     method: 'PATCH',
@@ -156,10 +156,11 @@ class HappyHours extends Component {
                 const stepTwo = `${Config.API_ENDPOINT}/success/steptwo`
 
                 fetch(stepTwo, stepTwoOptions)
-                    .then(res => res.json())
-                    //.then()
+                    .then(res => res.json())                  
                     .catch(error => {
-                        //console.log(error)
+                        this.setState({
+                            error: error,
+                        })
                     })
 
             
@@ -182,7 +183,6 @@ class HappyHours extends Component {
 
     render() {
         
-        //const {userName} = this.context;
         const { user } = this.state;
 
         const token = this.context.token
@@ -191,7 +191,6 @@ class HappyHours extends Component {
 
         let balance = sumOfHappyHours - happyhours_used
 
-        //console.log('this is user state: ' + this.state.user[0])
 
         return(
             <div>

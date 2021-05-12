@@ -59,6 +59,7 @@ class UserData extends Component {
                         Bonus
                     </div>
                 </div>
+
                 <div className='ud-row-w'>
                     {datau.day1}
                     <div>
@@ -113,12 +114,18 @@ class UserData extends Component {
                     
                     </div>
                 </div>
-                <div className='ud-row'>
+                <div className='btncol'>
                         
 
+                    <div>
 
-                                <EditUserData data={datau} token={token} />
-                                <DeleteUserEntry data={datau} />
+                        <EditUserData data={datau} token={token} />
+
+                    </div>
+                    <div>
+                        <DeleteUserEntry data={datau} />
+
+                    </div>
                                 
                             
                         </div>

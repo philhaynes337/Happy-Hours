@@ -8,21 +8,51 @@ class Nav extends Component {
 
         return(
             <div className='nav'>
-                <div className='col'>
-                    <Link to='/'>Home</Link>
+
+                <div className='desktop'>
+                    <div className='coln'>
+                        <Link to='/'>Home</Link>
+                    </div>
+                    <div className='coln'>
+                        <Link to='/About'>About</Link>
+                    </div>
+                    <div className='coln'>
+                        <Link to='/HappyHours'>Happy Hours</Link>
+                    </div>
+                    <div className='coln'>
+                        <Link to='/CreateAccount'>Create Account</Link>
+                    </div>
+                    <div className='coln'>
+                        <Link to='/Login'>Login</Link>
+                    </div>
                 </div>
-                <div className='col'>
-                    <Link to='/About'>About</Link>
+
+            <div className='mobile'>
+                <div className='spans'>
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
-                <div className='col'>
-                    <Link to='/HappyHours'>Happy Hours</Link>
+                <div className='mobile-nav'>
+                    <div className='coln'>
+                            <Link to='/'>Home</Link>
+                        </div>
+                        <div className='coln'>
+                            <Link to='/About'>About</Link>
+                        </div>
+                        <div className='coln'>
+                            <Link to='/HappyHours'>Happy Hours</Link>
+                        </div>
+                        <div className='coln'>
+                            <Link to='/CreateAccount'>Create Account</Link>
+                        </div>
+                        <div className='coln'>
+                            <Link to='/Login'>Login</Link>
+                        </div>
+                    </div>
+
                 </div>
-                <div className='col'>
-                    <Link to='/CreateAccount'>Create Account</Link>
-                </div>
-                <div className='col'>
-                    <Link to='/Login'>Login</Link>
-                </div>
+
             </div>
         )
     }

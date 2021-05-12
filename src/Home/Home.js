@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Home.css'
 
 
 
@@ -6,7 +7,7 @@ class Home extends Component {
     render() {
 
         return(
-            <div>
+            <div className='home'>
                 <section>
                     <h2>
                         Welcome to Happy Hours! 

@@ -1,4 +1,4 @@
-//import React from 'react';
+
 
 const TokenService = {
 
@@ -17,7 +17,6 @@ saveToken(token) {
         return !!TokenService.getAuthToken()
     },
     hasAuthToken() {
-        //console.log('Token Service: ' + token)
         return !!TokenService.getAuthToken()
     },
 }

@@ -8,6 +8,9 @@ class TakeHappyHours extends Component {
     constructor(props) {
         super(props)
         this.state = {
+            happyhours: 0,
+            happyhours_used: 0,
+            life_time_happyhours: 0,
 
         }
     }
@@ -114,7 +117,6 @@ class TakeHappyHours extends Component {
             .then(res => res.json())
             .then(data => {
 
-                //console.log('Data.HappyHours: ' + data[0].happyhours)
                 this.setState({
                     happyhours: data[0].happyhours,
                     happyhours_used: data[0].happyhours_used,
@@ -148,13 +150,13 @@ class TakeHappyHours extends Component {
 
     render() {
 
-        const { happyhours, happyhours_used, life_time_happyhours, zeroBalance } = this.state;
+        const { happyhours_used, life_time_happyhours, zeroBalance } = this.state;
 
         let balance = life_time_happyhours - happyhours_used
 
         let parseBalance = parseInt(balance)
 
-        
+       
 
 
 
@@ -162,8 +164,7 @@ class TakeHappyHours extends Component {
             <div>
                 <Hnav />
 
-                Take Happy Hours Component
-                <br />
+                <h2>Time to Take Time Off!!!</h2>
 
                 <section>
                     <p>

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-//import ReactDom from 'react-dom';
 import { UserContext } from '../../UserContext';
 import config from '../../config'
 import './css/EditUserData.css'
@@ -23,9 +22,8 @@ class EditUserData extends Component {
 
         this.setState({
             showEditModal: 'noShow',
-        })
-        
-        
+            editText: 'Edit',
+        }) 
        
     }
 
@@ -35,9 +33,17 @@ class EditUserData extends Component {
        
         this.setState({
             showEditModal: 'show',
-            editText: 'Updating',
+            editText: '.....',
         })
      }
+
+     closeModal = e => {
+         e.preventDefault();
+        this.setState({
+            showEditModal: 'noShow',
+            editText: 'Edit',
+        })
+    }
 
      handleUpdateButton = e => {
          e.preventDefault();
@@ -105,6 +111,8 @@ class EditUserData extends Component {
      }
 
 
+
+
     
     render() {
         const { data } = this.props;
@@ -119,116 +127,119 @@ class EditUserData extends Component {
         return (
             <div>
                 <div>
-                    <button onClick={this.handleEditButton} name='Edit Button'>
+                    <button className='udbtn' onClick={this.handleEditButton} name='Edit Button'>
                                 {editText}
                     </button>
                 </div>
             <div className={this.state.showEditModal}>
                 <div className='modal'>
-             
+
+                    <div className='closeModal'>
+                        <a href='#home' className='closeModalLink' onClick={this.closeModal}>&times;</a>
+                    </div>
 
                 <form name='Update Entry' onSubmit={this.handleUpdateButton}>
 
-                <div className='row'>
+                <div className='rowe'>
                     Week Start: (Format YYYY-MM-DD)
                 </div>
-                <div className='colum'>
+                <div className='colume'>
                     <input type='date' name='date' id='date' defaultValue={weekStart} />
                 </div>
 
-                <div className='row'>
+                <div className='rowe'>
                     Day1:
                 </div>
-                <div className='colum'>
+                <div className='colume'>
                     <input type='text' name='day1' id='day1' defaultValue={data.day1} />
                 </div>
 
-                <div className='row'>
+                <div className='rowe'>
                     Day1 Bonus:
                 </div>
-                <div className='colum'>
+                <div className='colume'>
                     <input type='text' name='day1b' id='day1b' defaultValue={data.day1b} />
                 </div>
-                <div className='row'>
+                <div className='rowe'>
                     Day2:
                 </div>
-                <div className='colum'>
+                <div className='colume'>
                     <input type='text' name='day2' id='day2' defaultValue={data.day2} />
                 </div>
 
-                <div className='row'>
+                <div className='rowe'>
                     Day2 Bonus:
                 </div>
-                <div className='colum'>
+                <div className='colume'>
                     <input type='text' name='day2b' id='day2b' defaultValue={data.day2b} />
                 </div>
 
-                <div className='row'>
+                <div className='rowe'>
                     Day3:
                 </div>
-                <div className='colum'>
+                <div className='colume'>
                     <input type='text' name='day3' id='day3' defaultValue={data.day3} />
                 </div>
 
-                <div className='row'>
+                <div className='rowe'>
                     Day3 Bonus:
                 </div>
-                <div className='colum'>
+                <div className='colume'>
                     <input type='text' name='day3b' id='day3b' defaultValue={data.day3b} />
                 </div>
 
-                <div className='row'>
+                <div className='rowe'>
                     Day4:
                 </div>
-                <div className='colum'>
+                <div className='colume'>
                     <input type='text' name='day4' id='day4' defaultValue={data.day4} />
                 </div>
 
-                <div className='row'>
+                <div className='rowe'>
                     Day4 Bonus:
                 </div>
-                <div className='colum'>
+                <div className='colume'>
                     <input type='text' name='day4b' id='day4b' defaultValue={data.day4b} />
                 </div>
 
-                <div className='row'>
+                <div className='rowe'>
                     Day5:
                 </div>
-                <div className='colum'>
+                <div className='colume'>
                     <input type='text' name='day5' id='day5' defaultValue={data.day5} />
                 </div>
 
-                <div className='row'>
+                <div className='rowe'>
                     Day5 Bonus:
                 </div>
-                <div className='colum'>
+                <div className='colume'>
                     <input type='text' name='day5b' id='day5b' defaultValue={data.day5b} />
                 </div>
-                <div className='row'>
+                <div className='rowe'>
                     Day6:
                 </div>
-                <div className='colum'>
+                <div className='colume'>
                     <input type='text' name='day6' id='day6' defaultValue={data.day6} />
                 </div>
 
-                <div className='row'>
+                <div className='rowe'>
                     Day6 Bonus:
                 </div>
-                <div className='colum'>
+                <div className='colume'>
                     <input type='text' name='day6b' id='day6b' defaultValue={data.day6b} />
                 </div>
 
-                <div className='row'>
+                <div className='rowe'>
                     Day7:
                 </div>
-                <div className='colum'>
+                <div className='colume'>
                     <input type='text' name='day7' id='day7' defaultValue={data.day7} />
                 </div>
 
-                <div className='row'>
+                <div className='rowe'>
                     Day7 Bonus:
                 </div>
-                <div className='colum'>
+                <div className='colume'>
                     <input type='text' name='day7b' id='day7b' defaultValue={data.day7b} />
                 </div>
 
@@ -239,10 +250,7 @@ class EditUserData extends Component {
                         Update
                     </button>
                     </form>
-                    
-                        <button onClick={this.handleCloseButton} name='Exit Edit'>
-                            Exit
-                        </button>
+
 
                     </div>
                 </div>

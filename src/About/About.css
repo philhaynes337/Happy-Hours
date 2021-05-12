@@ -1,0 +1,9 @@
+.ali {
+    display: list-item;
+    color: #FFFFFF;
+    float: none;
+    list-style-type: circle;
+    font-weight: bold;
+    content: "\2022"
+    
+}

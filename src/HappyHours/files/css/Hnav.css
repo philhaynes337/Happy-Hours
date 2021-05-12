@@ -1,6 +1,10 @@
 .hnav {
-    text-align: center;
-    border-style: solid;
+    display: inline;
+    flex-direction: row;
+    text-align: left;
+    border-style: none;
+    width: 800px;
+    
 }
 
 .hnav a:hover {
@@ -10,4 +14,18 @@
 .hnav a {
     background: #28208C;
     color: #FFFFFF;
+}
+
+.hnavLogout {
+    float: right;
+}
+.hnavLeft {
+    float: left;
+}
+li {
+    text-decoration: none;
+    color: #28208C;
+    display: flex;
+    flex-direction: row;
+    float: left;
 }

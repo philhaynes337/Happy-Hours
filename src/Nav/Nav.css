@@ -1,18 +1,85 @@
-.col {
+.coln {
     display: flex;
     flex-direction: column;
     border-color: #000000;
     border-style: solid;
-    font-size: 30px;
-    width: 250px;
+    font-size: 20px;
+    font-weight: bold;
+    width: 147px;
     margin: 0px 10px 0px 0px;
     padding: 0px;
 }
-.col a:hover {
+.coln a:hover {
     background: #000000;
 }
 
 .nav a {
     background: #28208C;
     color: #FFFFFF;
+}
+
+.desktop {
+    display: none;
+}
+
+.mobile {
+    display: block;
+    text-align: center;
+    background: #28208C;
+    color: #FFFFFF;
+    float: right;
+}
+
+span {
+
+    display: block;
+    width: 150px;
+    height: 15px;
+    margin-bottom: 5px;
+
+    text-align: center;
+    background: #FFFFFF;
+    border-radius: 3px;
+    
+    z-index: 1;
+  
+  }
+
+.spans {
+    float: right;
+}
+.nav{
+    float: right;
+    width: 599px;
+    background: #28208C;
+}
+
+.mobile-nav {
+    display: none;
+    z-index: 1;
+    position: fixed;
+    width: 150px;
+}
+
+.mobile:hover .mobile-nav {
+    display: block;
+}
+
+@media only screen and (min-width: 600px) {
+    .coln{
+        font-size: 30px;
+        width: 250px;
+    }
+    .desktop {
+        display: block;
+    }
+    .mobile {
+        display: none;
+    }
+    .nav {
+        width: 300px;
+    }
+
+
+
 }

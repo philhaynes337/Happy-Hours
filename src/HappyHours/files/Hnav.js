@@ -10,11 +10,16 @@ class Hnav extends Component {
 
         return(
             <div className='hnav'>
-               <Link to={'/HappyHours'}>View Entries</Link>|  
-               <Link to={'/ANW'}>Add New Week</Link>|  
-               <Link to={'/TakeHappyHours'}>Use Happy Hours</Link>| 
 
-               <LogOut />
+             
+                    <Link to={'/HappyHours'}>View Entries</Link>|  
+             
+                    <Link to={'/ANW'}>Add New Week</Link>|  
+           
+                    <Link to={'/TakeHappyHours'}>Use Happy Hours</Link>
+          
+                <div className='hnavLogout'><LogOut /></div>
+               
             </div>
         )
     }

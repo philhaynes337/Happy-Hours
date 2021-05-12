@@ -3,6 +3,7 @@
     flex-direction: row;
     border-color: #000000;
     border-style: solid;
+    font-size: 12px;
     
 }
 .ud-row-w {
@@ -17,4 +18,40 @@
 }
 .noShow {
     display: none;
+}
+
+.udbtn {
+    height: 20px;
+    width: 50px;
+    font-size: 13px;
+    margin: 0px 0px 15px 0px;
+    text-align: center;
+}
+
+.btncol {
+    display: block;
+    border-color: #000000;
+    border-style: solid;
+
+}
+
+@media only screen and (min-width: 650px) {
+    .ud-row {
+        font-size: 20px;
+        
+    }
+    .ud-row-w {
+        width: 75px;
+        border-color: #000000;
+        border-style: solid;
+    }
+    .ud_row-w1 {
+        width: 200px;
+        border-color: #000000;
+        border-style: solid;
+    }
+    .noShow {
+        display: none;
+    }
+
 }

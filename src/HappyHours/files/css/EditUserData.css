@@ -39,6 +39,7 @@
     height: 1180px;
     top: 10%;
     left: 30%;
+    font-size: 20px;
     margin-left: -50px; /* margin is -0.5 * dimension */
     margin-top: -25px;
     border-style: solid;
@@ -46,6 +47,18 @@
     background-color: #28208C; /*rgb(0,0,0); /* Fallback color */
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.15);
 
+}
+
+.closeModal {
+    font-size: 80px;
+    text-align: right;
+    cursor: pointer;
+    color: #FFFFFF;
+    
+}
+a.closeModalLink:link, a.closeModalLink:visited, a.closeModalLink:hover, a.closeModalLink:active {
+    color:white;
+    text-decoration: none;
 }
 
 input {
@@ -62,20 +75,19 @@ button {
     
 }
 
-.colum {
+
+.colume {
     display: flex;
     flex-direction: column;
-    border-style: solid;
-    border-color: black;
+
     width: 60px;
 
 }
 
-.row {
+.rowe {
     display: flex;
     flex-direction: row;
-    border-style: solid;
-    border-color: black;
+
     width: 100%;
 }
 @-webkit-keyframes animatetop {
@@ -88,3 +100,7 @@ from {top:-300px; opacity:0}
 to {top:0; opacity:1}
 }
   
+@media only screen and (min-width: 600px) {
+
+
+}

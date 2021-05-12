@@ -14,15 +14,12 @@ class LogOut extends Component {
 
     handleLogOut = e => {
         e.preventDefault();
-        //e.stopPropagation();
 
-        //console.log('LogOut Pressed')
 
         const jwtw = window.sessionStorage.getItem('TOKEN_KEY')
 
         const jwt = {token: jwtw}
 
-        //console.log(jwt)
 
         const loggedInUrl = `${Config.API_ENDPOINT}/success/step`
 
@@ -70,10 +67,6 @@ class LogOut extends Component {
                         console.log(error)
                     })
 
-
-
-
-                //console.log(this.state.usid)
             })
             .catch(error => {
                 console.log(error)

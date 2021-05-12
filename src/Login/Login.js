@@ -35,7 +35,6 @@ class Login extends Component {
 
         const { user_name, user_password } = e.target;
 
-        //const { userName } = this.context
 
         AuthService.login({
             user_name: user_name.value,
@@ -45,7 +44,7 @@ class Login extends Component {
             
             user_password.value = '';
             TokenService.saveToken(res.authToken);
-           //console.log(res.userid)
+
             this.setState({
                 token: res.authToken,
                 userName: user_name.value,
@@ -63,10 +62,9 @@ class Login extends Component {
             setUserName(this.state.userName)
             
             setUserToken(this.state.token)
-            //console.log(this.state.userid)
             
             setUserId(this.state.userid)
-            //TokenService.clearAuthToken();
+
             
             this.loginSuccess();
         })

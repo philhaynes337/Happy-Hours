@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import config from '../../config';
+//import './css/DeleteUserEntry.css'
 
 class DeleteUserEntry extends Component {
     constructor(props) {
@@ -51,12 +52,12 @@ class DeleteUserEntry extends Component {
 
 
     render() {
-//console.log(this.props.data.id)
+
 
         return(
             <div>
                 <form onSubmit={this.handelDeleteEntry}>
-                    <button>Delete</button>
+                    <button  className='udbtn'>Delete</button>
                 </form>
             </div>
         )
