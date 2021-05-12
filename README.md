@@ -12,6 +12,8 @@ Password:
 -----------------
 Screenshots
 
+![Main Page](https://raw.githubusercontent.com/philhaynes337/Happy-Hours/main/pics/mobilesnip1.JPG)
+
 -----------------
 Summary
 
